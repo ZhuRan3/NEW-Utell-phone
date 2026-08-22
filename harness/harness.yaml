@@ -1,0 +1,28 @@
+version: "0.1"
+owner: "Zhu3xx"
+repository_role: "mobile"
+contract_profile: "integration-profile.pending"
+paths:
+  contracts: "harness/契约"
+  fixtures: "harness/fixtures"
+  mocks: "harness/mocks"
+  scenarios: "harness/scenarios"
+  evidence: "harness/evidence"
+  scripts: "harness/scripts"
+rules:
+  production_code: false
+  real_business_data: false
+  offline_capture: false
+  automatic_resend: false
+  relay_ack_is_commit: false
+required_scenarios:
+  - pairing_invalid
+  - ready_gate
+  - ack_vs_persistent_receipt
+  - unknown_result
+  - projection_version_ordering
+  - card_command_version_conflict
+  - pairing_revocation
+  - session_memory_reset
+  - diagnostic_redaction
+

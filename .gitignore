@@ -1,0 +1,17 @@
+.DS_Store
+.env
+.env.*
+!.env.example
+*.pem
+*.key
+*.p12
+*.mobileprovision
+DerivedData/
+build/
+.build/
+Pods/
+node_modules/
+dist/
+harness/evidence/*
+!harness/evidence/README.md
+
