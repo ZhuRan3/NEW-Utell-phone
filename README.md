@@ -4,7 +4,7 @@ Utell（油条）手机端独立仓库，当前阶段是从零建立工程规范
 
 ## 当前边界
 
-- Owner：Zhu3xx，负责手机端的需求、架构、实现、测试、发布和维护；首发平台与技术栈待选型（Q-PH-2026-001）。
+- Owner：Zhu3xx，负责手机端（iOS 原生 + SwiftUI，iOS 17+）的需求、架构、实现、测试、发布和维护。
 - 手机是智能日志的采集、投影和交互端；电脑 Connector 是业务权威端，Relay 只提供安全路由。
 - P0 仅覆盖配对、链路状态、文字日志提交、日期/事件 Card Projection、卡片确认/纠正和脱敏诊断。
 - 按当前 PRD，手机不持久化 Capture 原文、Outbox、Event、Card 或 Projection 业务缓存，不自动重发未知结果。
