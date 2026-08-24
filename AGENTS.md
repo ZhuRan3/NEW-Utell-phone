@@ -13,6 +13,8 @@ AGENTS.md
   -> 项目总体背景愿景目标/PRD：Utell（油条）第一代智能日志 MVP.md
   -> 文档/背景与链路/背景复核方法与工作链路.md
   -> 文档/架构与契约/架构基线.md
+  -> 文档/架构与契约/跨端公开契约治理规范.md
+  -> 文档/工作进度/开发进度与会话交接.md
   -> 开发规则规范/README.md
   -> 当前任务相关的需求、Q&A、契约和 harness 场景
 ```
@@ -32,6 +34,7 @@ AGENTS.md
 - Card Command 必须在线并携带 `event_id`、命令类型和 `expectedVersion`。
 - 不引入通用 Shell/HTTP 执行能力，不把 Pi runtime 嵌入手机。
 - 机读契约、fixtures 和证据可共享；不共享另一端运行时领域代码。
+- 两端 `harness/契约/integration-profile.yaml` 必须逐字节一致；契约变更按跨端公开契约治理规范执行。
 
 ## 文档要求
 
