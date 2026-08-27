@@ -1,0 +1,43 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "projection_version_ordering",
+  "contains_business_data": false,
+  "cases": [
+    {
+      "name": "initial_snapshot",
+      "current_event_version": null,
+      "incoming_event_version": 8,
+      "expected_action": "accept",
+      "expected_memory_event_version": 8,
+      "memory_changed": true,
+      "projection_persisted": false
+    },
+    {
+      "name": "duplicate_version",
+      "current_event_version": 8,
+      "incoming_event_version": 8,
+      "expected_action": "discard",
+      "expected_memory_event_version": 8,
+      "memory_changed": false,
+      "projection_persisted": false
+    },
+    {
+      "name": "stale_lower_version",
+      "current_event_version": 8,
+      "incoming_event_version": 7,
+      "expected_action": "discard",
+      "expected_memory_event_version": 8,
+      "memory_changed": false,
+      "projection_persisted": false
+    },
+    {
+      "name": "newer_version",
+      "current_event_version": 8,
+      "incoming_event_version": 9,
+      "expected_action": "accept",
+      "expected_memory_event_version": 9,
+      "memory_changed": true,
+      "projection_persisted": false
+    }
+  ]
+}

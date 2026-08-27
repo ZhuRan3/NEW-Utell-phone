@@ -1,0 +1,46 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "card_command_version_conflict",
+  "contains_business_data": false,
+  "cases": [
+    {
+      "name": "matching_expected_version",
+      "command_event_reference_present": true,
+      "expected_version": 8,
+      "authoritative_version": 8,
+      "transport_interrupted": false,
+      "expected_result": "accepted",
+      "expected_error": null,
+      "authority_write_performed": true,
+      "projection_refresh_required": false,
+      "user_reconfirmation_required": false,
+      "auto_resend": false
+    },
+    {
+      "name": "stale_expected_version",
+      "command_event_reference_present": true,
+      "expected_version": 7,
+      "authoritative_version": 8,
+      "transport_interrupted": false,
+      "expected_result": "rejected",
+      "expected_error": "VERSION_CONFLICT",
+      "authority_write_performed": false,
+      "projection_refresh_required": true,
+      "user_reconfirmation_required": true,
+      "auto_resend": false
+    },
+    {
+      "name": "disconnect_before_command_receipt",
+      "command_event_reference_present": true,
+      "expected_version": 8,
+      "authoritative_version": 8,
+      "transport_interrupted": true,
+      "expected_result": "unknown",
+      "expected_error": null,
+      "authority_write_performed": false,
+      "projection_refresh_required": true,
+      "user_reconfirmation_required": false,
+      "auto_resend": false
+    }
+  ]
+}

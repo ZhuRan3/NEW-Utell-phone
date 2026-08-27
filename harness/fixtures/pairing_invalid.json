@@ -1,0 +1,55 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "pairing_invalid",
+  "contains_business_data": false,
+  "cases": [
+    {
+      "name": "expired_token",
+      "pairing_attempted": true,
+      "token_expired": true,
+      "token_already_used": false,
+      "fingerprint_matches": true,
+      "device_revoked": false,
+      "expected_error": "PAIRING_INVALID",
+      "pairing_established": false,
+      "session_established": false,
+      "expected_phone_state": "UNPAIRED"
+    },
+    {
+      "name": "already_used_token",
+      "pairing_attempted": true,
+      "token_expired": false,
+      "token_already_used": true,
+      "fingerprint_matches": true,
+      "device_revoked": false,
+      "expected_error": "PAIRING_INVALID",
+      "pairing_established": false,
+      "session_established": false,
+      "expected_phone_state": "UNPAIRED"
+    },
+    {
+      "name": "fingerprint_mismatch",
+      "pairing_attempted": true,
+      "token_expired": false,
+      "token_already_used": false,
+      "fingerprint_matches": false,
+      "device_revoked": false,
+      "expected_error": "PAIRING_INVALID",
+      "pairing_established": false,
+      "session_established": false,
+      "expected_phone_state": "UNPAIRED"
+    },
+    {
+      "name": "device_revoked",
+      "pairing_attempted": true,
+      "token_expired": false,
+      "token_already_used": false,
+      "fingerprint_matches": true,
+      "device_revoked": true,
+      "expected_error": "PAIRING_INVALID",
+      "pairing_established": false,
+      "session_established": false,
+      "expected_phone_state": "UNPAIRED"
+    }
+  ]
+}

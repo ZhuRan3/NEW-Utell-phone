@@ -1,0 +1,53 @@
+version: "0.1"
+status: "planned"
+contract_profile: "integration-profile.pending"
+scenario_format: "Given/When/Then with visible result and forbidden side effects"
+scenarios:
+  - id: "SC-PH-2026-001"
+    key: "pairing_invalid"
+    status: "ready"
+    requires: ["pairing_and_identity", "errors_and_close_codes"]
+    fixture: "harness/fixtures/pairing_invalid.json"
+    runner: "harness/scripts/verify_pairing_invalid_semantics.rb"
+  - id: "SC-PH-2026-002"
+    key: "ready_gate"
+    status: "ready"
+    requires: ["health_and_ready"]
+    fixture: "harness/fixtures/ready_gate.json"
+    runner: "harness/scripts/verify_ready_gate_semantics.rb"
+  - id: "SC-PH-2026-003"
+    key: "ack_vs_persistent_receipt"
+    status: "ready"
+    requires: ["capture_receipt_semantics", "relay_transport"]
+    fixture: "harness/fixtures/ack_vs_persistent_receipt.json"
+    runner: "harness/scripts/verify_ack_receipt_semantics.rb"
+  - id: "SC-PH-2026-004"
+    key: "unknown_result"
+    status: "ready"
+    requires: ["capture_receipt_semantics", "errors_and_close_codes"]
+    fixture: "harness/fixtures/unknown_result.json"
+    runner: "harness/scripts/verify_unknown_result_semantics.rb"
+  - id: "SC-PH-2026-005"
+    key: "projection_version_ordering"
+    status: "ready"
+    requires: ["projection_sync"]
+    fixture: "harness/fixtures/projection_version_ordering.json"
+    runner: "harness/scripts/verify_projection_version_ordering_semantics.rb"
+  - id: "SC-PH-2026-006"
+    key: "card_command_version_conflict"
+    status: "ready"
+    requires: ["card_command", "errors_and_close_codes"]
+    fixture: "harness/fixtures/card_command_version_conflict.json"
+    runner: "harness/scripts/verify_card_command_version_conflict_semantics.rb"
+  - id: "SC-PH-2026-007"
+    key: "pairing_revocation"
+    status: "planned"
+    requires: ["pairing_and_identity", "errors_and_close_codes"]
+  - id: "SC-PH-2026-008"
+    key: "session_memory_reset"
+    status: "planned"
+    requires: ["projection_sync", "original_trace"]
+  - id: "SC-PH-2026-009"
+    key: "diagnostic_redaction"
+    status: "planned"
+    requires: ["errors_and_close_codes"]

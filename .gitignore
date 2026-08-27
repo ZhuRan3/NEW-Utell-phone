@@ -16,3 +16,6 @@ harness/evidence/*
 !harness/evidence/README.md
 !harness/evidence/*/
 !harness/evidence/*/*.md
+
+# 调研缓存(不入库)
+.firecrawl/

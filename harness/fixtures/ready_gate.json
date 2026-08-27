@@ -1,0 +1,68 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "ready_gate",
+  "contains_business_data": false,
+  "health_max_age_seconds": 30,
+  "cases": [
+    {
+      "name": "all_ready_conditions",
+      "relay_connected": true,
+      "connector_online": true,
+      "capability_compatible": true,
+      "authority_storage_accepting": true,
+      "health_age_seconds": 30,
+      "expected_phone_state": "READY",
+      "input_enabled": true
+    },
+    {
+      "name": "relay_unreachable",
+      "relay_connected": false,
+      "connector_online": true,
+      "capability_compatible": true,
+      "authority_storage_accepting": true,
+      "health_age_seconds": 10,
+      "expected_phone_state": "NOT_READY_RELAY",
+      "input_enabled": false
+    },
+    {
+      "name": "connector_offline",
+      "relay_connected": true,
+      "connector_online": false,
+      "capability_compatible": true,
+      "authority_storage_accepting": true,
+      "health_age_seconds": 10,
+      "expected_phone_state": "NOT_READY_CONNECTOR",
+      "input_enabled": false
+    },
+    {
+      "name": "connector_incompatible",
+      "relay_connected": true,
+      "connector_online": true,
+      "capability_compatible": false,
+      "authority_storage_accepting": true,
+      "health_age_seconds": 10,
+      "expected_phone_state": "NOT_READY_CONNECTOR",
+      "input_enabled": false
+    },
+    {
+      "name": "authority_storage_unavailable",
+      "relay_connected": true,
+      "connector_online": true,
+      "capability_compatible": true,
+      "authority_storage_accepting": false,
+      "health_age_seconds": 10,
+      "expected_phone_state": "NOT_READY_STORAGE",
+      "input_enabled": false
+    },
+    {
+      "name": "health_stale",
+      "relay_connected": true,
+      "connector_online": true,
+      "capability_compatible": true,
+      "authority_storage_accepting": true,
+      "health_age_seconds": 31,
+      "expected_phone_state": "UNKNOWN",
+      "input_enabled": false
+    }
+  ]
+}
