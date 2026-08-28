@@ -19,3 +19,4 @@ harness/evidence/*
 
 # 调研缓存(不入库)
 .firecrawl/
+spikes/SPK-PH-2026-002-device-wss-keychain/SPKPH002.xcodeproj/
