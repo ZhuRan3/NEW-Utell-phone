@@ -12,5 +12,8 @@
 - `verify_card_command_version_conflict_semantics.rb`：执行 `card_command_version_conflict` 脱敏语义检查。
 - `verify_ack_receipt_semantics.rb`：执行 `ack_vs_persistent_receipt` 脱敏语义检查。
 - `verify_unknown_result_semantics.rb`：执行 `unknown_result` 脱敏语义检查。
+- `verify_pairing_revocation_semantics.rb`：执行 `pairing_revocation` 脱敏语义检查。
+- `verify_session_memory_reset_semantics.rb`：执行 `session_memory_reset` 脱敏语义检查。
+- `verify_diagnostic_redaction_semantics.rb`：执行 `diagnostic_redaction` 脱敏语义检查。
 
 脚本执行结果必须按 `开发规则规范/07-人类可读进度与技术沟通规范.md` 登记到测试站证据：记录实际命令、退出码、环境、通过范围、未覆盖范围和证据位置。脚本通过不等于契约批准或生产就绪。

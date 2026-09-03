@@ -18,3 +18,4 @@
 | ID | 假设 | 状态 |
 | --- | --- | --- |
 | `SPK-PH-2026-001` | iOS（Swift，iOS 17+）能以可审计方式运行 Noise 握手并与 Rust snow 互操作（D4 阻塞项） | 本机互操作与 iOS target 编译完成；Connector 共同验收待完成 |
+| `SPK-PH-2026-002` | 真机上 WSS 生命周期与 Keychain 边界符合已确认语义（Q-PH-2026-023/029/030/032） | 已完成（2026-08-28，真机 iOS 26.6.1，E3）；证据见 `harness/evidence/2026-08-28/SPK-PH-2026-002-summary.md` |

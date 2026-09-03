@@ -1,0 +1,50 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "pairing_revocation",
+  "contains_business_data": false,
+  "source": "PRD v0.5 FR-001/FR-007、AC-002/AC-018、5.2 链路状态",
+  "cases": [
+    {
+      "name": "revoke_confirmed",
+      "user_revoke_requested": true,
+      "connector_acknowledged": true,
+      "pairing_remains_active": false,
+      "expected_phone_state": "UNPAIRED",
+      "input_enabled": false,
+      "pairing_entry_shown": true,
+      "relay_rejects_further_routing": true,
+      "session_established": false,
+      "expected_error": null,
+      "retry_prompt_shown": false,
+      "authority_history_retained": true
+    },
+    {
+      "name": "revoked_device_reconnect",
+      "user_revoke_requested": false,
+      "connector_acknowledged": false,
+      "pairing_remains_active": false,
+      "expected_phone_state": "UNPAIRED",
+      "input_enabled": false,
+      "pairing_entry_shown": true,
+      "relay_rejects_further_routing": true,
+      "session_established": false,
+      "expected_error": "PAIRING_INVALID",
+      "retry_prompt_shown": false,
+      "authority_history_retained": true
+    },
+    {
+      "name": "revoke_failure_keeps_state",
+      "user_revoke_requested": true,
+      "connector_acknowledged": false,
+      "pairing_remains_active": true,
+      "expected_phone_state": "READY",
+      "input_enabled": true,
+      "pairing_entry_shown": false,
+      "relay_rejects_further_routing": false,
+      "session_established": true,
+      "expected_error": null,
+      "retry_prompt_shown": true,
+      "authority_history_retained": true
+    }
+  ]
+}

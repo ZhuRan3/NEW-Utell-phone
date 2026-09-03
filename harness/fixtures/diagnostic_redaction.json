@@ -1,0 +1,64 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "diagnostic_redaction",
+  "contains_business_data": false,
+  "source": "PRD v0.5 FR-007、AC-017、7.3 安全硬约束",
+  "allowed_export_keys": [
+    "pairing_state",
+    "link_state",
+    "last_error_code",
+    "error_counts",
+    "receipt_latency_p95_ms",
+    "app_version",
+    "connector_capability",
+    "exported_at"
+  ],
+  "cases": [
+    {
+      "name": "export_requires_confirmation",
+      "user_confirmed": false,
+      "export_produced": false,
+      "export": null
+    },
+    {
+      "name": "redacted_export",
+      "user_confirmed": true,
+      "export_produced": true,
+      "export": {
+        "pairing_state": "paired",
+        "link_state": "READY",
+        "last_error_code": "RELAY_UNREACHABLE",
+        "receipt_latency_p95_ms": 4200,
+        "app_version": "0.0.0-synthetic",
+        "exported_at": "2026-09-03T00:00:00Z"
+      }
+    },
+    {
+      "name": "error_history_export",
+      "user_confirmed": true,
+      "export_produced": true,
+      "export": {
+        "pairing_state": "paired",
+        "link_state": "UNKNOWN",
+        "error_counts": {
+          "RELAY_UNREACHABLE": 3,
+          "CONNECTOR_UNAVAILABLE": 1
+        },
+        "app_version": "0.0.0-synthetic",
+        "exported_at": "2026-09-03T00:00:00Z"
+      }
+    },
+    {
+      "name": "revoked_pairing_export",
+      "user_confirmed": true,
+      "export_produced": true,
+      "export": {
+        "pairing_state": "revoked",
+        "link_state": "UNPAIRED",
+        "last_error_code": "PAIRING_INVALID",
+        "app_version": "0.0.0-synthetic",
+        "exported_at": "2026-09-03T00:00:00Z"
+      }
+    }
+  ]
+}

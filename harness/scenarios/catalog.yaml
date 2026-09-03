@@ -1,5 +1,5 @@
 version: "0.1"
-status: "planned"
+status: "ready"
 contract_profile: "integration-profile.pending"
 scenario_format: "Given/When/Then with visible result and forbidden side effects"
 scenarios:
@@ -41,13 +41,19 @@ scenarios:
     runner: "harness/scripts/verify_card_command_version_conflict_semantics.rb"
   - id: "SC-PH-2026-007"
     key: "pairing_revocation"
-    status: "planned"
+    status: "ready"
     requires: ["pairing_and_identity", "errors_and_close_codes"]
+    fixture: "harness/fixtures/pairing_revocation.json"
+    runner: "harness/scripts/verify_pairing_revocation_semantics.rb"
   - id: "SC-PH-2026-008"
     key: "session_memory_reset"
-    status: "planned"
+    status: "ready"
     requires: ["projection_sync", "original_trace"]
+    fixture: "harness/fixtures/session_memory_reset.json"
+    runner: "harness/scripts/verify_session_memory_reset_semantics.rb"
   - id: "SC-PH-2026-009"
     key: "diagnostic_redaction"
-    status: "planned"
+    status: "ready"
     requires: ["errors_and_close_codes"]
+    fixture: "harness/fixtures/diagnostic_redaction.json"
+    runner: "harness/scripts/verify_diagnostic_redaction_semantics.rb"

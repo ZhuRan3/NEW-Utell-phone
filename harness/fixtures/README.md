@@ -10,3 +10,6 @@
 - `card_command_version_conflict.json`：只表达 Card Command 版本匹配、`VERSION_CONFLICT` 和断线未知结果，不包含业务正文或内部标识。
 - `ack_vs_persistent_receipt.json`：只表达 Relay ACK、Connector 持久接收回执和端点可见状态的关系，不包含业务正文或内部标识。
 - `unknown_result.json`：只表达提交后断线、当前会话查询和 App 退出后的清理约束，不包含业务正文或内部标识。
+- `pairing_revocation.json`：只表达撤销确认、已撤销设备重连拒绝和撤销失败保留原状态的约束，不包含业务正文或内部标识。
+- `session_memory_reset.json`：只表达重启/冷启动/后台恢复/退出后的内存清空、游标不持久化和快照重新获取约束，不包含业务正文或内部标识。
+- `diagnostic_redaction.json`：只表达诊断导出的确认前提和脱敏白名单约束，不包含业务正文或内部标识。

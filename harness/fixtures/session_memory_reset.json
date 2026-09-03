@@ -1,0 +1,78 @@
+{
+  "fixture_version": "0.1",
+  "scenario_key": "session_memory_reset",
+  "contains_business_data": false,
+  "source": "PRD v0.5 2.3/5.5/7.3、AC-005/AC-010/AC-023/AC-029",
+  "cases": [
+    {
+      "name": "app_restart_clears_memory",
+      "event": "app_restarted",
+      "memory_business_view_cleared": true,
+      "persistent_business_cache_read": false,
+      "sync_cursor_persisted": false,
+      "incremental_sync_used": false,
+      "authority_snapshot_requested": true,
+      "projection_resync_initiated": true,
+      "original_trace_retained": false,
+      "original_trace_auto_retry": false,
+      "draft_persisted": false,
+      "draft_recoverable": false
+    },
+    {
+      "name": "cold_start_without_cursor",
+      "event": "cold_start",
+      "memory_business_view_cleared": true,
+      "persistent_business_cache_read": false,
+      "sync_cursor_persisted": false,
+      "incremental_sync_used": false,
+      "authority_snapshot_requested": true,
+      "projection_resync_initiated": true,
+      "original_trace_retained": false,
+      "original_trace_auto_retry": false,
+      "draft_persisted": false,
+      "draft_recoverable": false
+    },
+    {
+      "name": "background_resume_resyncs",
+      "event": "background_resumed_ready",
+      "memory_business_view_cleared": false,
+      "persistent_business_cache_read": false,
+      "sync_cursor_persisted": false,
+      "incremental_sync_used": true,
+      "authority_snapshot_requested": false,
+      "projection_resync_initiated": true,
+      "original_trace_retained": false,
+      "original_trace_auto_retry": false,
+      "draft_persisted": false,
+      "draft_recoverable": false
+    },
+    {
+      "name": "exit_after_original_view",
+      "event": "app_exit_after_original_trace",
+      "memory_business_view_cleared": true,
+      "persistent_business_cache_read": false,
+      "sync_cursor_persisted": false,
+      "incremental_sync_used": false,
+      "authority_snapshot_requested": true,
+      "projection_resync_initiated": true,
+      "original_trace_retained": false,
+      "original_trace_auto_retry": false,
+      "draft_persisted": false,
+      "draft_recoverable": false
+    },
+    {
+      "name": "killed_with_draft",
+      "event": "app_killed_with_draft",
+      "memory_business_view_cleared": true,
+      "persistent_business_cache_read": false,
+      "sync_cursor_persisted": false,
+      "incremental_sync_used": false,
+      "authority_snapshot_requested": true,
+      "projection_resync_initiated": true,
+      "original_trace_retained": false,
+      "original_trace_auto_retry": false,
+      "draft_persisted": false,
+      "draft_recoverable": false
+    }
+  ]
+}
